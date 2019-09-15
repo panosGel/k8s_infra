@@ -1,16 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: azure-vote-back
+  name: azure-vote-plus-back
+  labels:
+    app: azure-vote-plus
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: azure-vote-back
+      component: azure-vote-plus-back
   template:
     metadata:
       labels:
-        app: azure-vote-back
+        app: azure-vote-plus
+        component: azure-vote-plus-back
     spec:
       containers:
         - name: azure-vote-back
